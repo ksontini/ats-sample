@@ -1,0 +1,21 @@
+{
+  "name": "Category",
+  "base": "PersistedModel",
+  "mongodb": {
+    "collection": "categories"
+  },
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

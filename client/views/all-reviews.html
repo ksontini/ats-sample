@@ -1,0 +1,52 @@
+<section>
+
+    <select ng-options="cat as cat.name for cat in categories"
+            ng-model="item" ng-change="loadDatafn(1,item)"></select>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Brand</th>
+        <th>Material</th>
+        <th>details</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+  <tbody>
+  <tr ng-click="openModal(r)" ng-repeat="r in products">
+    <td>{{r.productName }}</td>
+    <td>{{r.basePrice }}</td>
+    <td>{{r.category }}</td>
+    <td>{{r.brand}}</td>
+    <td>{{r.productMaterial}}</td>
+    <td>{{r.details }}</td>
+    <td>{{r.delivery | date }}</td>
+    <td>{{r.rating | date }}</td>
+  </tr>
+  </tbody>
+  </table>
+    <div>
+        <button ng-repeat="_ in ((_ = []) && (_.length=count) && _) track by $index" ng-click="loadDatafn($index+1,item)">{{$index+1}}</button>
+    </div>
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span ng-click="closeModal()" class="close">&times;</span>
+      <p><img ng-src="{{currentProduct.imageUrl}}" height="100px;"/><strong>Name:</strong> {{currentProduct.productName}}</p>
+      <p><strong>Brand:</strong> {{currentProduct.brand}} <strong>Category:</strong> {{currentProduct.category}}</p>
+      <p><strong>Material:</strong> {{currentProduct.productMaterial}}</p>
+      <p><strong>Price:</strong> {{currentProduct.basePrice}}</p>
+      <p><strong>Details:</strong> {{currentProduct.details}}</p>
+      <p><strong>Delivery:</strong> {{currentProduct.delivery | date }}</p>
+      <p><strong>Rate:</strong> {{currentProduct.rating }}: {{currentProduct.pos}}</p>
+      <div style="height:800px;width:600px;">
+        <canvas class="chart chart-bar" chart-data="currentProduct.vals" chart-labels="currentProduct.labels"
+                chart-colors="currentProduct.colors" ></canvas>
+      </div>
+    </div>
+
+  </div>
+</section>

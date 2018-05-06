@@ -1,0 +1,13 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "ats": {
+    "host": "localhost",
+    "port": 27017,
+    "database": "ats",
+    "name": "ats",
+    "connector": "mongodb"
+  }
+}

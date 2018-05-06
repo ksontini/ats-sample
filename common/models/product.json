@@ -1,0 +1,42 @@
+{
+  "name": "Product",
+  "base": "PersistedModel",
+  "mongodb": {
+    "collection": "products"
+  },
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "productName": {
+      "type": "string",
+      "required": true
+    },
+    "basePrice": {
+      "type": "number"
+    },
+    "rating": {
+      "type": "number"
+    },
+    "category": {
+      "type": "string"
+    },
+    "brand": {
+      "type": "string"
+    },
+    "productMaterial": {
+      "type": "string"
+    },
+    "imageUrl": {
+      "type": "string"
+    },
+    "delivery": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
